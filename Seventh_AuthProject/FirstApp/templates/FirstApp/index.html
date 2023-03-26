@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOMEPAGE</h1>
+    <p>Total Books: {{num_books}}</p>
+    <p>Num Available: {{num_instances_avail}}</p>
+    {% if user.is_authenticated %}
+    <p> You are Logged In</p>
+    <p>Welcome: {{user.get_username}}</p>
+    <p>request.path is {{request.path}}</p>
+
+    <p> if u click this logout it will take u to {{request.path}}</p>
+    <a href="{% url 'logout' %}?next={{request.path}}">LOGOUT HERE</a>
+    <!-- next={{request.path}} 
+        after the user has been successfully logged in our logged out ,
+        views can then use the next value to begin to redirect the user back to the 
+        page where they actually first click ed that log in or log out link 
+         -->
+        <p> if u click this logout it will take u to loggedout.html becoz i removed the next = request.path in this button</p>
+
+        <a href="{% url 'logout' %}">LOGOUT HERE</a>
+
+        <p> next behaves like redirecting first it takes to logout and then redirects to next</p>
+
+{% else %}
+    <p>You are not logged in</p>
+    <p>request.path is {{request.path}}</p>
+
+    <a href="{% url 'login' %}?next={{request.path}}">LOGIN HERE</a>
+{% endif %}
+
+</body>
+</html>

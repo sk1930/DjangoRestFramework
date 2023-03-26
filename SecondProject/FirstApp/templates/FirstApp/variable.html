@@ -1,0 +1,82 @@
+<!-- just type and hit enter-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Variable view</h1>
+    <h2> first name is  {{first_name}}</h2>
+    <h3> {{some_list}}</h3>
+    <h3>element at 0 index in that somelist is  {{some_list.0}}</h3>
+    <h3> {{some_dict}}</h3>
+    <h3>element at somedict is  {{some_dict.inside_key}}</h3>
+
+    <h1> below there is a line in {} with # 
+        <br>it is not visible. that is a comment Django Template language
+    </h1>
+    <h1>{# this is a comment in Django Html #}</h1>
+
+
+    <h2>Filters https://docs.djangoproject.com/en/4.1/ref/templates/builtins/ 
+        <br> https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#built-in-filter-reference
+    </h2>
+    <p> upper case {{first_name|upper}} </p>
+    <p> length {{first_name|length}}</p>
+    <p>last name is {{last_name}}</p>
+    <p> capFirst case {{last_name|capfirst}} </p>
+    <p> lower first then capFirst  {{last_name|lower|capfirst}} </p>
+
+    <h2> if u enable Django extension it automatically suggest code autofilling
+        <br> if u just type for it gives the syntax but the extension conflicts with html auto suggestions
+    </h2>
+
+    <h1> Django Tags </h1>
+    <ul>
+    {% for item in some_list  %}
+
+    <li> {{item}}</li>
+    
+    {% endfor %} 
+    </ul>
+    <ul>
+
+    {% for k,v in some_dict.items  %}
+
+    <li> {{k}}</li>
+    
+    {% endfor %} 
+    
+
+
+    </ul>
+
+    <h2> https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#if</h2>
+
+
+    {% if user_logged_in  %}
+    <h1> welcome {{first_name}} u r logged in </h1>
+    <p> if the user is not logged in this information is never sent to the cliennt
+
+        <br> like this executes on the server side</p>
+    {% endif %}
+
+    <ul>
+    {% for item in some_list  %}
+        {% if item == 2 %} 
+        <li>there should be space here around == else it will throw error
+            if item == 2</li>
+        <li>TWO</li>
+        {% else %}
+            <li>{num}</li>
+        {% endif %}
+    
+      
+    {% endfor %} 
+        </ul>
+
+  
+</body>
+</html>

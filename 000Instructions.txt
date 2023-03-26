@@ -1,0 +1,18 @@
+read 00,01,02 folders only here and 00Matter.txt
+
+
+python
+quit()
+
+
+if python is not installed above way towards left of sfcreen there will be an icon for exetension market
+there type python adn instakll 
+
+by doing this the intellisencse is also installed
+
+pip install django
+
+
+Goto marketplace and search live preview  -- install it 
+once  installed towards right beside the 3dots there will be option to live 
+preview

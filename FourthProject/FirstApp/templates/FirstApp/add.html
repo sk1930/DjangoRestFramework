@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{%block content%}
+<!--as we are using bootstrap lets use div class = container-->
+
+<div class='container'>
+    <h1>add.html</h1>
+       <form action="" method='POST'>
+        {% csrf_token %}
+        <!-- csrf token is needed without it if u hit submit button u will get the error
+        with the details saying it should be there-->
+        <!-- name is for key - value pair
+        id is to match with label-->
+
+        <div class="form-group">
+            <!-- div class if from bootstrap-->
+            <label for="brand">BRAND:</label>
+            <input class= "form-control"  type="text" id="brand" name="brand">
+        </div>
+        <div class="form-group">
+            <label for="year">YEAR:</label>
+            <input class= "form-control" type="text" id="year" name="year">
+        </div>
+        <input class="btn btn-primary" type="submit">
+       </form>
+    
+    </div>
+
+{%endblock%}

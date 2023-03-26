@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<h1> static images view normally we have to write src="c:/desktip ...full path</h1>
+<h2>manage.py runserver --insecure works for serving static files with debug=True
+    With debug turned off Django won't handle static files for you any more - your production web server (Apache or something) should take care of that.
+</h2>    
+<img src="{% static 'SecondApp/sk.jpg' %}" alt="my image">
+
+
+<p> the below image with full path is not working its ok however static is working with debug True</p>
+<img src="C:\Users\Student\Desktop\Untitled Folder\Python\SecondProject\SecondApp\static\SecondApp\sk.jpg" alt = "second">
+{% endblock %}

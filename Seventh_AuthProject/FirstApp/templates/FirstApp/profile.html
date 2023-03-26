@@ -1,0 +1,7 @@
+<h1>Welcome to your profile</h1>
+<h2>Here are your books checked out:</h2>
+
+<!-- by default it is model_list so bookinstance_list-->
+{% for book in bookinstance_list  %}
+    <p>{{book}}</p>
+{% endfor %}
